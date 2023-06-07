@@ -1,0 +1,11 @@
+is_global = true
+build_property.TargetFramework = net7.0-windows
+build_property.TargetPlatformMinVersion = 7.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = U16A2_q0xogztr_wpftmp
+build_property.ProjectDir = C:\Users\433057\OneDrive - The College of West Anglia\Unit 16\U16A2\programs\Program1\U16A2\U16A2\
