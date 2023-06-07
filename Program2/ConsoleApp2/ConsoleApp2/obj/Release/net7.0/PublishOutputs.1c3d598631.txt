@@ -1,0 +1,5 @@
+F:\MyApp\ConsoleApp2.exe
+F:\MyApp\ConsoleApp2.dll
+F:\MyApp\ConsoleApp2.deps.json
+F:\MyApp\ConsoleApp2.runtimeconfig.json
+F:\MyApp\ConsoleApp2.pdb

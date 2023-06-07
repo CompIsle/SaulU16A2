@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Rd7aMozCAorPdcxE18nOXEu5mmnzxhx5p8JB6A0QiXAflkJ1Xiyu8ClbOsPiob1VkpTXskxeQyMpO+KN24S4Eg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\433057\\OneDrive - The College of West Anglia\\Unit 16\\U16A2\\programs\\Program2\\ConsoleApp2\\ConsoleApp2\\ConsoleApp2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\433057\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
