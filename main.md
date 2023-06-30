@@ -37,7 +37,7 @@ Program2: Index system. The solution must read book details, and generate a uniq
 
 Data dictionary for both programs:
 
-[Data Dictionary](DataDic.xlsx)
+"./DataDic.xlsx"
 
 #### Control Structures
 
@@ -53,7 +53,7 @@ Class Diagrams have been created for both solutions. See inside the project fold
 
 A use-case diagram has been created for the To-Do List program. The index system program does not have a use-case diagram. This is because of the lack of any needed interactivity for the program. As long as the user puts the data file in the correct folder- the program will work without any user input.
 
-![Alt text](End-User.PNG)
+![Alt text](./Use-Case.PNG)
 
 ### Aesthetic design
 
