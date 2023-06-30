@@ -8,8 +8,7 @@
     - [Algorithm designs](#algorithm-designs)
     - [Aesthetic design](#aesthetic-design)
     - [Design Review](#design-review)
-  - [Analysis of the Provided Code (Indexing System)](#analysis-of-the-provided-code-indexing-system)
-    - [Review of requirements (Indexing System)](#review-of-requirements-indexing-system)
+  - [Analysis of the Provided Code](#analysis-of-the-provided-code)
     - [Namespaces and Dependencies](#namespaces-and-dependencies)
     - [Entry Point](#entry-point)
     - [CSV Reading](#csv-reading)
@@ -19,15 +18,12 @@
       - [Viktor](#viktor)
       - [Armandas](#armandas)
       - [Devon](#devon)
-  - [Analysis of the Provided Code (To-Do List)](#analysis-of-the-provided-code-to-do-list)
-    - [Review of requirements (To-Do List)](#review-of-requirements-to-do-list)
   - [Test](#test)
-    - [Test methods](#test-methods)
     - [Test Plan](#test-plan)
     - [Test Results](#test-results)
   - [Review](#review)
-  - [Problem 1](#problem-1)
-  - [Problem 2](#problem-2)
+    - [Review of requirements (To-Do List)](#review-of-requirements-to-do-list)
+    - [Review of requirements (Indexing System)](#review-of-requirements-indexing-system)
 
 ## Design
 
@@ -65,34 +61,35 @@ See: ./GUIdesign.pdf
 
 ### Design Review
 
-16/B.P4
-
-Review the plans for object-oriented programs with others to identify and inform refinements to produce a design  
-
-There is no clear review of the design. The design is not implemented (ie code and design differ, but there is no explanation of why)
-
-Exp. changes made, should naturally come as part of 'review'
-
 | Name | Suggestion | Comments |
 | --- | --- | --- |
 | Armandas | You have not specified which CSV reader you are going to use, though you've clearly shown that you will in your data dictionary | I am going to use the CsvHelper CSV reader: [https://joshclose.github.io/CsvHelper/](<https://joshclose.github.io/CsvHelper/>) |
 | Viktor | The Visual design for the GUI is very basic and looks ugly | The focus is on the features of the program. If time allows it though, themes could be used to quickly add a thematic look to the GUI without much effort |
 | Charlie | A pseudocode algorithm could help in the development process of the index system program | Instead of creating pseudocode, it is much more efficient to simply program a basic version that does not meet all requirements, and refine it over time. In order to show this, I will provide ample comments on the program to document how it has changed over time from its first version |
 
-## Analysis of the Provided Code (Indexing System)
+Overall, the designs included aim to meet all the basic user requirements for both programs:
 
-### Review of requirements (Indexing System)
+Program1: To-Do List
 
-Program2: Index system. 
+Users must be able to create tasks [/]
+Users should be able to delete tasks [/]
+Tasks should be able to be selected as 'complete' or otherwise (in-complete) [/]
+Each item (task) should have a title, description, due date and completion status [/]
+Description and due date should be mutable, and others immutable [/]
+Users should be able to toggle whether all items (tasks) or only 'completed' items (tasks) are shown [/]
+Has a GUI [/]
 
-The solution must read book details []
-Generate a unique index reference []
-Writing a new CSV file. []
-Allocating unique serial numbers []
-Decomposed solution []
-No user access to the data of the books []
-The solution must be able to efficiently read through the items it is given to ensure that books are not given 2 or more index numbers and stored multiple times in the output CSV file. 
-Being able to add new content to the original file is not required, but may be very useful in ensuring indexing stays consistent as new books are added to the libraries' collection - though this may be solved by having the program not give new indexes to contents with an existing one (though this should be done carefully to avoid repeated indexes).
+Program2: Index system
+
+The solution must read book details [/]
+Generate a unique index reference [/]
+Writing a new CSV file [/]
+Allocating unique serial numbers [/]
+Decomposed solution [/]
+No user access to the data of the books [/]
+Books are given 1 index number and stored once in the output CSV file [/]
+
+## Analysis of the Provided Code
 
 ### Namespaces and Dependencies
 
@@ -156,49 +153,66 @@ My Comment: I will remove the redundant property declarations. Similarly, the `P
 
 Please note that the suggested changes have been made to the code for improved clarity and consistency. They have also been made before the submission of the code as part of the given assignment (with explanations as comments where applicable) and so the original version may not always be viewable. I have tried to keep it consistent in ensuring the comments include this, however.
 
-## Analysis of the Provided Code (To-Do List)
-
-### Review of requirements (To-Do List)
-
-Program1: To-do list. Users must be able to create and delete tasks. Tasks should be able to be selected as 'complete' or otherwise (in-complete). Each item (task) should have a title, description, due date and completion status. Description and due date should be mutable, and others immutable. Users should be able to toggle whether all items (tasks) or only 'completed' items (tasks) are shown. It is required that it have a GUI, and implementing it as a native desktop app (using WPF) seems appropriate as I am more familiar with this process that using HTML/CSS for the presentation layer (using Blazor for example). This suggests users should have a 'view', 'add', 'edit' and delete option available to them- through separate features of the to-do list, clearly visible at the top of the list, above the headings (the list presented in a table seems appropriate).
-
 ## Test
-
-16/C.P6
-
-Test object-oriented programs for functionality, usability, stability, and performance  
-
-There is no evidence of testing. I would suggest at this stage any testing should be manual.
-
-Test Plan + TABLE (simple stuff)
-
-### Test methods
 
 ### Test Plan
 
+| Task | Description | Status | Result | Notes |
+| --- | --- | --- | --- | --- |
+| Click buttons in program | Click the Add button to ensure that tasks are created when this is done | Incomplete | x | x |
+| Check empty input | Leave the input field for a new task's name empty to test if it will create an empty named task | Incomplete | x | x |
+| Click tick boxes | Click tick boxes to ensure they work to tick and untick for complete and incomplete tasks | Incomplete | x | x |
+
+| Task | Description | Status | Result | Notes |
+| --- | --- | --- | --- | --- |
+| Check output file | Check the output file against the original file. The output file should add an ID columns, but display other information the same (one column to the right though) | Incomplete | x | x |
+| Check for unique IDs | Check that IDs given are unique, and that copies of the same entry have the same ID, but are still placed in the output file | Incomplete | x | x |
+| Check original file | Make sure the data is the same before and after running the program | Incomplete | x | x |
+
 ### Test Results
+
+| Task | Description | Status | Result | Notes |
+| --- | --- | --- | --- | --- |
+| Click buttons in program | Click the Add button to ensure that tasks are created when this is done | Complete | Pass | NA |
+| Check empty input | Leave the input field for a new task's name empty to test if it will create an empty named task | Complete | Fail | Creates empty tasks, this needs to be addressed |
+| Click tick boxes | Click tick boxes to ensure they work to tick and untick for complete and incomplete tasks | Complete | Pass | NA |
+
+| Task | Description | Status | Result | Notes |
+| --- | --- | --- | --- | --- |
+| Check output file | Check the output file against the original file. The output file should add an ID columns, but display other information the same (one column to the right though) | Complete | Pass | NA |
+| Check for unique IDs | Check that IDs given are unique, and that copies of the same entry have the same ID, but are still placed in the output file | Complete | Pass | IDs will be different every time the program is run, so putting data as an input that already has an ID will override this data - this ensures new IDs from identical books are the same, however |
+| Check original file | Make sure the data is the same before and after running the program | Complete | Pass | NA |
 
 ## Review
 
-16/C.P7
-
 Review the extent to which the programs meet client requirements
 
-The review is incomplete.
+### Review of requirements (To-Do List)
 
-Requirement list - compare against it - say where it does / doesn't
-(would support P5 / could basically say some of the same stuff here)
+Users must be able to create tasks [/]
+Users should be able to delete tasks [X]
+Tasks should be able to be selected as 'complete' or otherwise (in-complete) [/]
+Each item (task) should have a title, description, due date and completion status [X]
+Description and due date should be mutable, and others immutable [X]
+Users should be able to toggle whether all items (tasks) or only 'completed' items (tasks) are shown [X]
+Has a GUI [/]
 
-## Problem 1
+Users be able to delete tasks was not implemented in the program. The program also fails to implement a mutable description and due date (or one at all) and does not support filtering tasks. This was due to time constraints during the development of the program. This means that the first program only meets some of the requirements of the users.
 
-A Todo list. This can be limited in scope as regards functionality provided it implements at least:
+There is an implemented GUI, and users can create tasks. It clearly shows the purpose of the program (with a clear title) and tasks can be easily selected as complete or in-complete vit a tick box. However, the GUI is very simple - even simpler than the original design. The ability to add tasks is not immediately obvious, and there is no indication as to where a user needs to type in order to give the task a name. It is also not shown whether ticked means complete or incomplete. Although users would infer ticked as complete most of the time, it still makes the user need to think about how to use the program.
 
-- Creation and deletion of tasks
-- Tracking done state and allowing tasks to be set to complete
-- Supporting title, description, due date, completed with description and due date being mutable (note also requirement to change completion status above)
-- Displaying a list of tasks
-- Toggling whether all tasks or only incomplete tasks are displayed
+### Review of requirements (Indexing System)
 
-## Problem 2
+Program2: Index system
 
-Problem 2: The college Library needs to add all its books to a new index system. This requires a solution that will automatically read book details (title, author, publisher, publication date) from a stored CSV file (no headings, records like “Python in Easy Steps, Mike McGrath, In Easy Steps Limited, July 2013"), and generate unique index reference before writing it to a new CSV file. e.g., "XA00079, Python in Easy Steps, Mike McGrath, In Easy Steps Limited, July 2013". There should be a separate class responsible for allocating serial numbers through implementation of an interface to allow alternative implementations later.
+The solution must read book details [/]
+Generate a unique index reference [/]
+Writing a new CSV file. [/]
+Allocating unique serial numbers [/]
+Decomposed solution [/]
+No user access to the data of the books [/]
+Books are not given 1 index number and stored once in the output CSV file [/]
+
+All of the user requirements are met for the index system program, however. The output is formatted in a desirable way, with indexes in the first column. It would be easy to add new columns to the original csv and support it in the code. The most problematic part of this being the lack of a recursive method to copy all properties from a Book to Book2 type, including their values. If this was implemented, the only change having to be made would be adding the mapping from properties to fields in the csv file - which is simple and easy. In addition, the code also includes many comments to help in the understanding of its functionality - which would help future programmers. It is however extremely confusing. If a user wouldn't know where to put the file, they wouldn't be able to find out. There includes no description of how to use the program in the program files (some sort of readme for the program). It will also output in different places depending on whether it's a project solution or it has been exported into an independent program.
+
+Overall, this creates a confusing but functional program that is difficult to use- but technically meets the user's requirements.
