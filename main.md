@@ -72,21 +72,33 @@ Overall, the designs included aim to meet all the basic user requirements for bo
 Program1: To-Do List
 
 Users must be able to create tasks [/]
+
 Users should be able to delete tasks [/]
+
 Tasks should be able to be selected as 'complete' or otherwise (in-complete) [/]
+
 Each item (task) should have a title, description, due date and completion status [/]
+
 Description and due date should be mutable, and others immutable [/]
+
 Users should be able to toggle whether all items (tasks) or only 'completed' items (tasks) are shown [/]
+
 Has a GUI [/]
 
 Program2: Index system
 
 The solution must read book details [/]
+
 Generate a unique index reference [/]
+
 Writing a new CSV file [/]
+
 Allocating unique serial numbers [/]
+
 Decomposed solution [/]
+
 No user access to the data of the books [/]
+
 Books are given 1 index number and stored once in the output CSV file [/]
 
 ## Analysis of the Provided Code
@@ -190,11 +202,17 @@ Review the extent to which the programs meet client requirements
 ### Review of requirements (To-Do List)
 
 Users must be able to create tasks [/]
+
 Users should be able to delete tasks [X]
+
 Tasks should be able to be selected as 'complete' or otherwise (in-complete) [/]
+
 Each item (task) should have a title, description, due date and completion status [X]
+
 Description and due date should be mutable, and others immutable [X]
+
 Users should be able to toggle whether all items (tasks) or only 'completed' items (tasks) are shown [X]
+
 Has a GUI [/]
 
 Users be able to delete tasks was not implemented in the program. The program also fails to implement a mutable description and due date (or one at all) and does not support filtering tasks. This was due to time constraints during the development of the program. This means that the first program only meets some of the requirements of the users.
@@ -206,11 +224,17 @@ There is an implemented GUI, and users can create tasks. It clearly shows the pu
 Program2: Index system
 
 The solution must read book details [/]
+
 Generate a unique index reference [/]
+
 Writing a new CSV file. [/]
+
 Allocating unique serial numbers [/]
+
 Decomposed solution [/]
+
 No user access to the data of the books [/]
+
 Books are not given 1 index number and stored once in the output CSV file [/]
 
 All of the user requirements are met for the index system program, however. The output is formatted in a desirable way, with indexes in the first column. It would be easy to add new columns to the original csv and support it in the code. The most problematic part of this being the lack of a recursive method to copy all properties from a Book to Book2 type, including their values. If this was implemented, the only change having to be made would be adding the mapping from properties to fields in the csv file - which is simple and easy. In addition, the code also includes many comments to help in the understanding of its functionality - which would help future programmers. It is however extremely confusing. If a user wouldn't know where to put the file, they wouldn't be able to find out. There includes no description of how to use the program in the program files (some sort of readme for the program). It will also output in different places depending on whether it's a project solution or it has been exported into an independent program.
